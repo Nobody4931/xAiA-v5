@@ -28,7 +28,8 @@ create it yourself and define these macros inside it
 
 * PROGRAM_NAME - the program name
 * PROGRAM_VERS - the program version
-* PROGRAM_FNAME - `PROGRAM_NAME " " PROGRAM_VERS`
+* PROGRAM_FNAME - the programs full name (aka the name
+  concatenated with the version)
 * CFG_TOKEN - your discord token
 
 ## not really faq
