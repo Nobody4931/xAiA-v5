@@ -20,6 +20,17 @@ whitespace based language
 - [ ] create client cache
 	- [ ] create event listeners
 
+## configuration
+if you cloned this repository off git, there would
+be a missing header file in the `lib` directory named
+`config.hpp` \
+create it yourself and define these macros inside it
+
+* PROGRAM_NAME - the program name
+* PROGRAM_VERS - the program version
+* PROGRAM_FNAME - `PROGRAM_NAME " " PROGRAM_VERS`
+* CFG_TOKEN - your discord token
+
 ## not really faq
 
 ### isnt this against the discord tos

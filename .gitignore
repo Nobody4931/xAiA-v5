@@ -1,6 +1,9 @@
+# lsp files
+/.cache/**
+
 # build files
 /bin/**
 /compile_commands.json
 
-# lsp files
-/.cache/**
+# config file
+/lib/config.hpp
