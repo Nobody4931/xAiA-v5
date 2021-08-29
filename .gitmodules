@@ -1,0 +1,12 @@
+[submodule "dep/spdlog"]
+	path = dep/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "dep/json"]
+	path = dep/json
+	url = https://github.com/nlohmann/json
+[submodule "dep/websocketpp"]
+	path = dep/websocketpp
+	url = https://github.com/zaphoyd/websocketpp
+[submodule "dep/asio"]
+	path = dep/asio
+	url = https://github.com/chriskohlhoff/asio
