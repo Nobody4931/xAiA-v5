@@ -11,7 +11,7 @@ whitespace based language
 	- [ ] blocksend
 
 ## todo
-- [ ] create http request wrappers
+- [x] create http request wrappers
 - [ ] create gateway client
 	- [ ] create client context structure
 	- [ ] create discord type enums
@@ -28,9 +28,11 @@ create it yourself and define these macros inside it
 
 * PROGRAM_NAME - the program name
 * PROGRAM_VERS - the program version
-* PROGRAM_FNAME - the programs full name (aka the name
-  concatenated with the version)
 * CFG_TOKEN - your discord token
+* CFG_DAPI_VERS_API - discord api version to use ["9"]
+* CFG_DAPI_VERS_GATE - discord gateway version to use ["9"]
+* CFG_DAPI_HOSTNAME - discord hostname to use ["discord.com"]
+* CFG_DAPI_PORT - discord port to use ["443"]
 
 ## not really faq
 
