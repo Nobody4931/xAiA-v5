@@ -29,7 +29,7 @@ http::parser::response dapi_request( asio::io_context& io_ctx, asio::streambuf& 
 	http::parser::response hresponse;
 
 	try {
-		asio::ssl::context ssl_ctx( asio::ssl::context_base::tlsv12_client ); // discord uses tls 1.2 apparently
+		asio::ssl::context ssl_ctx( asio::ssl::context_base::method::tlsv12_client ); // discord uses tls 1.2 apparently
 		asio::ssl::stream<asio::ip::tcp::socket> socket( io_ctx, ssl_ctx );
 
 		socket.next_layer().connect( dendpoint );
