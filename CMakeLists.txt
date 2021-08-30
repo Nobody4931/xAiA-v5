@@ -18,6 +18,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
+find_package(Fmt REQUIRED MODULE)
 find_package(Spdlog REQUIRED MODULE)
 find_package(JSON REQUIRED MODULE)
 find_package(Asio REQUIRED MODULE)
@@ -26,6 +27,7 @@ find_package(OpenSSL REQUIRED MODULE)
 
 set(REQUIRED_LIBS
 	Threads::Threads
+	Fmt::Fmt
 	Spdlog::Spdlog
 	JSON::JSON
 	Asio::Asio
@@ -34,6 +36,7 @@ set(REQUIRED_LIBS
 	OpenSSL::Crypto)
 
 set(REQUIRED_INCS
+	"${Fmt_INCLUDE_DIR}"
 	"${Spdlog_INCLUDE_DIR}"
 	"${JSON_INCLUDE_DIR}"
 	"${Asio_INCLUDE_DIR}"

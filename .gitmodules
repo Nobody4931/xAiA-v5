@@ -10,3 +10,6 @@
 [submodule "dep/asio"]
 	path = dep/asio
 	url = https://github.com/chriskohlhoff/asio
+[submodule "dep/fmt"]
+	path = dep/fmt
+	url = https://github.com/fmtlib/fmt
