@@ -33,6 +33,7 @@ create it yourself and define these macros inside it
 * CFG_DAPI_VERS_GATE - discord gateway version to use ["9"]
 * CFG_DAPI_HOSTNAME - discord hostname to use ["discord.com"]
 * CFG_DAPI_PORT - discord port to use ["443"]
+* CFG_DAPI_SPOOF_MOBILE - if the bot should activate the mobile indicator (will ignore user agent details) [0/1]
 * CFG_DAPI_AGENT - user agent to use (use [this site](https://www.whatismybrowser.com/guides/the-latest-user-agent/))
 * CFG_DAPI_AGENT_OS - user agent details (use [this site](https://developers.whatismybrowser.com/useragents/parse/))
 * CFG_DAPI_AGENT_OS_VERSION - user agent details (use [this site](https://developers.whatismybrowser.com/useragents/parse/))

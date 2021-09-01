@@ -86,6 +86,9 @@ void dclient_t::setup() {
 
 	// Generate SuperProperties
 	// SEE: https://luna.gitlab.io/discord-unofficial-docs/science.html#super-properties-object
+
+#if CFG_DAPI_SPOOF_MOBILE == 0
+
 	m_super_properties["os"] = CFG_DAPI_AGENT_OS;
 	m_super_properties["browser"] = CFG_DAPI_AGENT_BROWSER;
 	m_super_properties["device"] = "";
@@ -100,6 +103,27 @@ void dclient_t::setup() {
 	m_super_properties["release_channel"] = "stable";
 	m_super_properties["client_build_number"] = get_client_build_number( m_io_ctx, m_base_headers );
 	m_super_properties["client_event_source"] = nullptr;
+
+#else // CFG_DAPI_SPOOF_MOBILE != 0
+
+	// NOTE: Update this whenever I update Discord on my phone aswell
+
+	// yanked straight from my phone lol
+	m_super_properties["os"] = "iOS";
+	// m_super_properties["os"] = "14.7.1";                    // or is it here...
+	m_super_properties["browser"] = "Discord iOS";
+	m_super_properties["device"] = "iPhone12,1";
+	m_super_properties["system_locale"] = CFG_DAPI_LOCALE;
+	m_super_properties["os_version"] = "14.7.1";               // ...and not here?
+	m_super_properties["referrer"] = "";
+	m_super_properties["referring_domain"] = "";
+	m_super_properties["referrer_current"] = "";
+	m_super_properties["referring_domain_current"] = "";
+	m_super_properties["release_channel"] = "stable";
+	m_super_properties["client_build_number"] = 27527;
+	m_super_properties["client_event_source"] = nullptr;
+
+#endif // CFG_DAPI_SPOOF_MOBILE
 
 	m_base_headers += "X-Super-Properties: ";
 	m_base_headers += websocketpp::base64_encode( m_super_properties.dump() );
