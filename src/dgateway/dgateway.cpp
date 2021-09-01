@@ -85,6 +85,7 @@ void dclient_t::setup() {
 		"Connection: close\r\n";
 
 	// Generate SuperProperties
+	// SEE: https://luna.gitlab.io/discord-unofficial-docs/science.html#super-properties-object
 	m_super_properties["os"] = CFG_DAPI_AGENT_OS;
 	m_super_properties["browser"] = CFG_DAPI_AGENT_BROWSER;
 	m_super_properties["device"] = "";
