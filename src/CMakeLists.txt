@@ -1,6 +1,8 @@
 add_subdirectory(dapi)
+add_subdirectory(dgateway)
 
 list(APPEND PROJECT_LIBS dapi)
+list(APPEND PROJECT_LIBS dgateway)
 
 add_executable(${PROJECT_NAME}
 	main.cpp)

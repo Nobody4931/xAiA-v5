@@ -12,12 +12,12 @@ whitespace based language
 
 ## todo
 - [x] create http request wrappers
-- [ ] create gateway client
-	- [ ] create client context structure
-	- [ ] create discord type enums
-	- [ ] create discord object structures
-	- [ ] create gateway handler
+- [x] create gateway client
+	- [x] create super properties generator
+	- [x] create gateway handler
 - [ ] create client cache
+	- [x] create discord type enums
+	- [ ] create discord object structures
 	- [ ] create event listeners
 
 ## configuration
@@ -33,6 +33,12 @@ create it yourself and define these macros inside it
 * CFG_DAPI_VERS_GATE - discord gateway version to use ["9"]
 * CFG_DAPI_HOSTNAME - discord hostname to use ["discord.com"]
 * CFG_DAPI_PORT - discord port to use ["443"]
+* CFG_DAPI_AGENT - user agent to use (use [this site](https://www.whatismybrowser.com/guides/the-latest-user-agent/))
+* CFG_DAPI_AGENT_OS - user agent details (use [this site](https://developers.whatismybrowser.com/useragents/parse/))
+* CFG_DAPI_AGENT_OS_VERSION - user agent details (use [this site](https://developers.whatismybrowser.com/useragents/parse/))
+* CFG_DAPI_AGENT_BROWSER - user agent details (use [this site](https://developers.whatismybrowser.com/useragents/parse/))
+* CFG_DAPI_AGENT_BROWSER_VERSION - user agent details (use [this site](https://developers.whatismybrowser.com/useragents/parse/))
+* CFG_DAPI_LOCALE - locale to use ["en-US"]
 
 ## not really faq
 
