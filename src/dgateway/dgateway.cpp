@@ -204,7 +204,13 @@ void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::messa
 		case OP_DISPATCH: {
 			std::string event = data["t"].get<std::string>();
 
-			if ( event == "READY" ) {
+			if ( event == "MESSAGE_CREATE" || event == "MESSAGE_UPDATE" ) {
+				// TODO: Nitro sniper
+
+				// TODO: Command handler
+			}
+
+			else if ( event == "READY" ) {
 				m_session_id = data["d"]["session_id"].get<std::string>();
 
 				spdlog::debug( "Successfully started session: {}", m_session_id );
