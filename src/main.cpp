@@ -24,4 +24,6 @@ int main() {
 	dclient.setup();
 	dclient.connect();
 	dclient.get_runner_thread().join();
+
+	return 0;
 }
