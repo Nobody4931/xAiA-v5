@@ -9,7 +9,7 @@
 
 int main() {
 	spdlog::set_level( spdlog::level::trace );
-	spdlog::set_pattern( "[%m.%d.%c - %H:%M:%S] [%^%l%$] %v" );
+	spdlog::set_pattern( "[%m.%d.%C - %H:%M:%S] [%^%l%$] %v" );
 
 	spdlog::info( "Loading " PROGRAM_NAME " " PROGRAM_VERS "..." );
 
