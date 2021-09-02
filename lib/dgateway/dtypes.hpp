@@ -8,7 +8,7 @@
 typedef uint64_t dsnowflake_t;
 
 
-enum dgate_op_type : uint8_t {
+enum disc_gate_op_type : uint8_t {
 	OP_DISPATCH                     = 0,
 	OP_HEARTBEAT                    = 1,
 	OP_IDENTIFY                     = 2,
@@ -35,7 +35,7 @@ enum dgate_op_type : uint8_t {
 	OP_REQUEST_APPLICATION_COMMANDS = 24,
 };
 
-enum dgate_close_op_type : uint16_t {
+enum disc_gate_close_op_type : uint16_t {
 	COP_LOGGED_OUT_1          = 1000,
 	COP_LOGGED_OUT_2          = 1001,
 	COP_UNKNOWN_ERROR         = 4000,
@@ -55,7 +55,7 @@ enum dgate_close_op_type : uint16_t {
 };
 
 
-enum dpermissions_type : uint64_t {
+enum disc_permissions_type : uint64_t {
 	PERM_CREATE_INSTANT_INVITE      = (1LL << 0),
 	PERM_KICK_MEMBERS               = (1LL << 1),
 	PERM_BAN_MEMBERS                = (1LL << 2),
@@ -96,7 +96,7 @@ enum dpermissions_type : uint64_t {
 };
 
 
-enum dchannel_type : uint8_t {
+enum disc_channel_type : uint8_t {
 	CHANNEL_GUILD_TEXT           = 0,
 	CHANNEL_DM                   = 1,
 	CHANNEL_GUILD_VOICE          = 2,
@@ -110,7 +110,7 @@ enum dchannel_type : uint8_t {
 	CHANNEL_GUILD_STAGE_VOICE    = 13,
 };
 
-enum dperm_overwrites_type : uint8_t {
+enum disc_perm_overwrites_type : uint8_t {
 	PERM_OVER_ROLE   = 0,
 	PERM_OVER_MEMBER = 1,
 };

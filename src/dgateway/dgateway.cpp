@@ -197,7 +197,7 @@ void dclient_t::identify( websocketpp::connection_hdl con_hdl ) {
 void dclient_t::on_close( websocketpp::connection_hdl con_hdl ) {
 	client_t::connection_ptr con_ptr = m_client.get_con_from_hdl( con_hdl );
 
-	dgate_close_op_type close_code = static_cast<dgate_close_op_type>( con_ptr->get_remote_close_code() );
+	disc_gate_close_op_type close_code = static_cast<disc_gate_close_op_type>( con_ptr->get_remote_close_code() );
 
 	spdlog::debug( "Disconnected from gateway: {} '{}'",
 		close_code, con_ptr->get_remote_close_reason() );
@@ -224,7 +224,7 @@ void dclient_t::on_close( websocketpp::connection_hdl con_hdl ) {
 void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::message_ptr message ) {
 	nlohmann::json data = nlohmann::json::parse( message->get_payload() );
 
-	switch ( data["op"].get<dgate_op_type>() ) {
+	switch ( data["op"].get<disc_gate_op_type>() ) {
 
 		case OP_DISPATCH: {
 			std::string event = data["t"].get<std::string>();

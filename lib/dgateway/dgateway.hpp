@@ -93,9 +93,6 @@ private:
 	bool m_readied_before;
 	std::string m_session_id;
 	int32_t m_last_sequence;
-
-	std::map<dsnowflake_t, dguild_t*> m_guilds;
-	std::map<dsnowflake_t, duser_t*> m_users;
 };
 
 #endif
