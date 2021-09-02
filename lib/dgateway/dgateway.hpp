@@ -1,6 +1,5 @@
 #pragma once
-#ifndef DGATEWAY_HEADER_HPP
-#define DGATEWAY_HEADER_HPP
+
 
 #define ASIO_STANDALONE
 
@@ -96,5 +95,3 @@ private:
 	std::string m_session_id;
 	int32_t m_last_sequence;
 };
-
-#endif
