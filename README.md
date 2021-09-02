@@ -7,7 +7,7 @@ whitespace based language
 - [ ] nitro sniper
 - [ ] giveaway notifier
 - [ ] custom commands
-	- [ ] read/readall
+	- [ ] read
 	- [ ] blocksend
 
 ## todo
@@ -19,6 +19,12 @@ whitespace based language
 	- [x] create discord type enums
 	- [x] create discord object structures
 	- [ ] create event listeners
+- [ ] create nitro sniper
+- [ ] create command handler
+- [ ] create read command
+	- usage: read [guilds/servers|dms|all]
+- [ ] create blocksend command
+	- usage: blocksend \<id\> \<message|attachment\>...
 
 ## configuration
 if you cloned this repository off git, there would
