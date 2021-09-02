@@ -9,6 +9,7 @@
 #include <memory>
 #include <functional>
 #include <thread>
+#include <map>
 
 #include <nlohmann/json.hpp>
 #include <websocketpp/client.hpp>
@@ -16,6 +17,8 @@
 #include <websocketpp/connection.hpp>
 
 #include "config.hpp"
+#include "dgateway/dtypes.hpp"
+#include "dgateway/dobjects.hpp"
 
 
 #define DGATE_ENDPOINT "wss://gateway.discord.gg/?v=" CFG_DAPI_VERS_GATE "&encoding=json"
@@ -90,6 +93,9 @@ private:
 	bool m_readied_before;
 	std::string m_session_id;
 	int32_t m_last_sequence;
+
+	std::map<dsnowflake_t, dguild_t*> m_guilds;
+	std::map<dsnowflake_t, duser_t*> m_users;
 };
 
 #endif

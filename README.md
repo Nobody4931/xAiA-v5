@@ -17,7 +17,7 @@ whitespace based language
 	- [x] create gateway handler
 - [ ] create client cache
 	- [x] create discord type enums
-	- [ ] create discord object structures
+	- [x] create discord object structures
 	- [ ] create event listeners
 
 ## configuration
