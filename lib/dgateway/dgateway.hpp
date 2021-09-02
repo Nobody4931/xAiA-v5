@@ -19,6 +19,7 @@
 #include "config.hpp"
 #include "dgateway/dtypes.hpp"
 #include "dgateway/dobjects.hpp"
+#include "dgateway/dcache.hpp"
 
 
 #define DGATE_ENDPOINT "wss://gateway.discord.gg/?v=" CFG_DAPI_VERS_GATE "&encoding=json"
@@ -77,6 +78,7 @@ public:
 
 private:
 	client_t m_client;
+	dcache_t m_cache;
 
 	std::thread m_runner_thread;
 	std::thread m_heartbeat_thread;

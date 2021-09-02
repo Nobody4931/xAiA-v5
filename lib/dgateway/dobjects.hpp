@@ -3,6 +3,7 @@
 #define DOBJECTS_HEADER_HPP
 
 #include <cstdint>
+#include <memory>
 #include <string>
 #include <vector>
 #include <map>
@@ -34,12 +35,12 @@ struct disc_user_t;
 struct disc_guild_t {
 	dsnowflake_t id;
 	std::string name;
-	disc_member_t* owner;
-	std::map<dsnowflake_t, disc_role_t*> roles;
-	std::map<dsnowflake_t, disc_channel_base_t*> channels;
-	std::map<dsnowflake_t, disc_channel_base_t*> threads;
-	std::map<dsnowflake_t, disc_member_t*> members;
-	std::map<dsnowflake_t, disc_emoji_t*> emojis;
+	std::shared_ptr<disc_member_t> owner;
+	std::map<dsnowflake_t, std::shared_ptr<disc_role_t>> roles;
+	std::map<dsnowflake_t, std::shared_ptr<disc_channel_base_t>> channels;
+	std::map<dsnowflake_t, std::shared_ptr<disc_channel_base_t>> threads;
+	std::map<dsnowflake_t, std::shared_ptr<disc_member_t>> members;
+	std::map<dsnowflake_t, std::shared_ptr<disc_emoji_t>> emojis;
 	bool unavailable;
 };
 
@@ -60,9 +61,9 @@ struct disc_role_t {
 struct disc_channel_base_t {
 	dsnowflake_t id;
 	disc_channel_type type;
-	disc_guild_t* guild;
+	std::shared_ptr<disc_guild_t> guild;
 	uint32_t position;
-	std::vector<disc_perm_overwrites_t*> overwrites;
+	std::vector<std::shared_ptr<disc_perm_overwrites_t>> overwrites;
 	std::string name;
 };
 
@@ -71,23 +72,23 @@ struct disc_channel_category_t : public disc_channel_base_t {
 
 struct disc_channel_text_t : public disc_channel_base_t {
 	std::string topic;
-	disc_channel_category_t* parent;
+	std::shared_ptr<disc_channel_category_t> parent;
 	bool nsfw;
 };
 
 struct disc_channel_voice_t : public disc_channel_base_t {
-	disc_channel_category_t* parent;
+	std::shared_ptr<disc_channel_category_t> parent;
 	uint32_t user_limit;
 };
 
 struct disc_channel_thread_t : public disc_channel_base_t {
-	disc_channel_text_t* parent;
+	std::shared_ptr<disc_channel_text_t> parent;
 	bool archived;
 	bool joined;
 };
 
 struct disc_channel_dm_t : public disc_channel_base_t {
-	std::vector<disc_user_t*> recipients;
+	std::vector<std::shared_ptr<disc_user_t>> recipients;
 };
 
 struct disc_channel_groupdm_t : public disc_channel_dm_t {
@@ -104,9 +105,9 @@ struct disc_perm_overwrites_t {
 
 
 struct disc_member_t {
-	disc_user_t* user;
+	std::shared_ptr<disc_user_t> user;
 	std::string nick;
-	std::vector<disc_role_t*> roles;
+	std::vector<std::shared_ptr<disc_role_t>> roles;
 	bool deaf;
 	bool mute;
 };
