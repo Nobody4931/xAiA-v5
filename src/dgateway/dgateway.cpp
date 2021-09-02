@@ -107,6 +107,7 @@ void dclient_t::setup() {
 #else // CFG_DAPI_SPOOF_MOBILE != 0
 
 	// NOTE: Update this whenever I update Discord on my phone aswell
+	// * And the User Agent used aswell
 
 	// yanked straight from my phone lol
 	m_super_properties["os"] = "iOS";
