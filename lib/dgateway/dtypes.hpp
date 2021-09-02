@@ -111,8 +111,8 @@ enum dchannel_type : uint8_t {
 };
 
 enum dperm_overwrites_type : uint8_t {
-	CHANNEL_PERM_ROLE   = 0,
-	CHANNEL_PERM_MEMBER = 1,
+	PERM_OVER_ROLE   = 0,
+	PERM_OVER_MEMBER = 1,
 };
 
 #endif
