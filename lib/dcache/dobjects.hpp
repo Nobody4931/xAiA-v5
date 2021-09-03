@@ -52,5 +52,6 @@ typedef std::shared_ptr<disc_user_t>               disc_user_ptr_t;
 #include "dcache/dobjects/channel_category.hpp"
 #include "dcache/dobjects/channel_text.hpp"
 #include "dcache/dobjects/channel_voice.hpp"
+#include "dcache/dobjects/channel_dm.hpp"
 
 #endif // DOBJECTS_DECLARATIONS_ONLY
