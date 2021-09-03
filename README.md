@@ -11,10 +11,6 @@ whitespace based language
 	- [ ] blocksend
 
 ## todo
-- [x] create http request wrappers
-- [x] create gateway client
-	- [x] create super properties generator
-	- [x] create gateway handler
 - [ ] create client cache
 	- [x] create discord type enums
 	- [x] create discord object structures
