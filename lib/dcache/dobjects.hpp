@@ -57,5 +57,6 @@ typedef std::shared_ptr<disc_user_t>               disc_user_ptr_t;
 #include "dcache/dobjects/channel_thread.hpp"
 #include "dcache/dobjects/member.hpp"
 #include "dcache/dobjects/emoji.hpp"
+#include "dcache/dobjects/user.hpp"
 
 #endif // DOBJECTS_DECLARATIONS_ONLY
