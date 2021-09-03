@@ -24,7 +24,7 @@
 
 #include "config.hpp"
 #include "dapi/dapi.hpp"
-#include "dgateway/dtypes.hpp"
+#include "dcache/dtypes.hpp"
 
 namespace http = websocketpp::http;
 

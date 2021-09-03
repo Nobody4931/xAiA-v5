@@ -16,9 +16,7 @@
 #include <websocketpp/connection.hpp>
 
 #include "config.hpp"
-#include "dgateway/dtypes.hpp"
-#include "dgateway/dobjects.hpp"
-#include "dgateway/dcache.hpp"
+#include "dcache/dcache.hpp"
 
 
 #define DGATE_ENDPOINT "wss://gateway.discord.gg/?v=" CFG_DAPI_VERS_GATE "&encoding=json"
