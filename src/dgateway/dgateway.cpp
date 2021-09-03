@@ -204,8 +204,8 @@ void dclient_t::on_close( websocketpp::connection_hdl con_hdl ) {
 
 	switch ( close_code ) {
 
-		case COP_INVALID_SEQ:
-		case COP_SESSION_TIMED_OUT:
+		case CLOSE_OP_INVALID_SEQ:
+		case CLOSE_OP_SESSION_TIMED_OUT:
 			m_last_sequence = -1;
 			m_session_id.clear();
 			break;
