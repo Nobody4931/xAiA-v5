@@ -46,4 +46,6 @@ typedef std::shared_ptr<disc_user_t>               disc_user_ptr_t;
 
 #ifndef DOBJECTS_DECLARATIONS_ONLY
 
+#include "dcache/dobjects/guild.hpp"
+
 #endif // DOBJECTS_DECLARATIONS_ONLY
