@@ -15,8 +15,7 @@
 class disc_channel_base_t {
 public:
 	disc_channel_base_t()
-		: id( 0 )
-		, position( 0 ) {}
+		: id( 0 ) {}
 
 	disc_channel_base_t( nlohmann::json& channel_data, disc_guild_ptr_t parent ) {
 		// TODO: This

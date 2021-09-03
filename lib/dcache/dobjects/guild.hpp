@@ -16,8 +16,7 @@
 class disc_guild_t {
 public:
 	disc_guild_t()
-		: id( 0 )
-		, unavailable( true ) {}
+		: id( 0 ) {}
 
 	disc_guild_t( nlohmann::json& guild_data ) {
 		// TODO: This

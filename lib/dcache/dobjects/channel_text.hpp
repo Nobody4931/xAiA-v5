@@ -14,8 +14,7 @@
 class disc_channel_text_t : public disc_channel_base_t {
 public:
 	disc_channel_text_t()
-		: disc_channel_base_t()
-		, nsfw( false ) {}
+		: disc_channel_base_t() {}
 
 	disc_channel_text_t( nlohmann::json& channel_data, disc_guild_ptr_t parent )
 		: disc_channel_base_t( channel_data, parent )

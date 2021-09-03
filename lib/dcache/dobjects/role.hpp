@@ -15,14 +15,7 @@
 class disc_role_t {
 public:
 	disc_role_t()
-		: id( 0 )
-		, color( 0 )
-		, position( 0 )
-		, permissions( static_cast<disc_permissions_type>( 0 ) )
-		, hoist( false )
-		, managed( false )
-		, mentionable( false )
-		, boost_role( false ) {}
+		: id( 0 ) {}
 
 	disc_role_t( nlohmann::json& role_data, disc_guild_ptr_t parent ) {
 		// TODO: This
