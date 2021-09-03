@@ -12,6 +12,7 @@
 #include "dcache/dtypes.hpp"
 #include "dcache/dobjects.hpp"
 
+
 class disc_guild_t {
 public:
 	disc_guild_t()

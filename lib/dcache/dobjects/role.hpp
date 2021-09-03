@@ -11,6 +11,7 @@
 #include "dcache/dtypes.hpp"
 #include "dcache/dobjects.hpp"
 
+
 class disc_role_t {
 public:
 	disc_role_t()
