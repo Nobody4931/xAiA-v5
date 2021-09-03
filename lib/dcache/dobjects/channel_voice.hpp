@@ -16,8 +16,8 @@ public:
 	disc_channel_voice_t()
 		: disc_channel_base_t() {}
 
-	disc_channel_voice_t( nlohmann::json& channel_data, disc_guild_ptr_t parent )
-		: disc_channel_base_t( channel_data, parent )
+	disc_channel_voice_t( nlohmann::json& channel_data, disc_guild_ptr_t parent_guild )
+		: disc_channel_base_t( channel_data, parent_guild )
 	{
 		// TODO: This
 	}

@@ -16,7 +16,7 @@ public:
 	disc_emoji_t()
 		: id( 0 ) {}
 
-	disc_emoji_t( nlohmann::json& emoji_data, disc_guild_ptr_t parent ) {
+	disc_emoji_t( nlohmann::json& emoji_data, disc_guild_ptr_t parent_guild ) {
 		// TODO: This
 	}
 

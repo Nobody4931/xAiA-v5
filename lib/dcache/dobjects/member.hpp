@@ -16,7 +16,7 @@ class disc_member_t {
 public:
 	disc_member_t() {}
 
-	disc_member_t( nlohmann::json& member_data, disc_guild_ptr_t parent ) {
+	disc_member_t( nlohmann::json& member_data, disc_guild_ptr_t parent_guild ) {
 		// TODO: This
 	}
 

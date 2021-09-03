@@ -14,8 +14,8 @@ public:
 	disc_channel_groupdm_t()
 		: disc_channel_dm_t() {}
 
-	disc_channel_groupdm_t( nlohmann::json& channel_data, disc_guild_ptr_t parent )
-		: disc_channel_dm_t( channel_data, parent )
+	disc_channel_groupdm_t( nlohmann::json& channel_data, disc_guild_ptr_t parent_guild )
+		: disc_channel_dm_t( channel_data, parent_guild )
 	{
 		// TODO: This
 	}

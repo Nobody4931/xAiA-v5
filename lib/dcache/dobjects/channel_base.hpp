@@ -18,7 +18,7 @@ public:
 	disc_channel_base_t()
 		: id( 0 ) {}
 
-	disc_channel_base_t( nlohmann::json& channel_data, disc_guild_ptr_t parent ) {
+	disc_channel_base_t( nlohmann::json& channel_data, disc_guild_ptr_t parent_guild ) {
 		// TODO: This
 	}
 

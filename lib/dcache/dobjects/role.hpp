@@ -17,7 +17,7 @@ public:
 	disc_role_t()
 		: id( 0 ) {}
 
-	disc_role_t( nlohmann::json& role_data, disc_guild_ptr_t parent ) {
+	disc_role_t( nlohmann::json& role_data, disc_guild_ptr_t parent_guild ) {
 		// TODO: This
 	}
 
