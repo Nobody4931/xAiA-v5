@@ -49,5 +49,6 @@ typedef std::shared_ptr<disc_user_t>               disc_user_ptr_t;
 #include "dcache/dobjects/guild.hpp"
 #include "dcache/dobjects/role.hpp"
 #include "dcache/dobjects/channel_base.hpp"
+#include "dcache/dobjects/channel_category.hpp"
 
 #endif // DOBJECTS_DECLARATIONS_ONLY
