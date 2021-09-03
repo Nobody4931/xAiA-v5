@@ -3,7 +3,6 @@
 
 #define DOBJECTS_DECLARATIONS_ONLY
 
-#include <cstdint>
 #include <string>
 #include <map>
 
