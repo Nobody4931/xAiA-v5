@@ -41,4 +41,5 @@ enum disc_permissions_type : uint64_t {
 	PERM_USE_PUBLIC_THREADS         = (1LL << 35),
 	PERM_USE_PRIVATE_THREADS        = (1LL << 36),
 	PERM_USE_EXTERNAL_STICKERS      = (1LL << 37),
+	PERM_ALL                        = (1LL << 38) - 1,
 };
