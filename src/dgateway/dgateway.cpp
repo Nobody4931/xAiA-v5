@@ -152,15 +152,13 @@ void dclient_t::connect() {
 
 
 void dclient_t::heartbeat( websocketpp::connection_hdl con_hdl ) {
-	spdlog::trace( "Sending HEARTBEAT..." );
-
-	if ( m_last_sequence == -1 ) {
-		m_client.send( con_hdl, "{\"op\":1,\"d\":null}", websocketpp::frame::opcode::TEXT );
-	} else {
-		m_client.send( con_hdl, fmt::format( "{{\"op\":1,\"d\":{}}}", m_last_sequence ), websocketpp::frame::opcode::TEXT );
-	}
-
-	spdlog::trace( "Successfully sent HEARTBEAT" );
+	try {
+		if ( m_last_sequence == -1 ) {
+			m_client.send( con_hdl, "{\"op\":1,\"d\":null}", websocketpp::frame::opcode::TEXT );
+		} else {
+			m_client.send( con_hdl, fmt::format( "{{\"op\":1,\"d\":{}}}", m_last_sequence ), websocketpp::frame::opcode::TEXT );
+		}
+	} catch ( const std::exception& error ) {}
 }
 
 void dclient_t::heartbeat_loop( websocketpp::connection_hdl con_hdl ) {
@@ -195,9 +193,7 @@ void dclient_t::identify( websocketpp::connection_hdl con_hdl ) {
 		payload["d"]["seq"] = m_last_sequence - 1;
 	}
 
-	spdlog::trace( "Sending IDENTIFY/RESUME..." );
 	m_client.send( con_hdl, payload.dump(), websocketpp::frame::opcode::TEXT );
-	spdlog::trace( "Successfully sent IDENTIFY/RESUME" );
 }
 
 
