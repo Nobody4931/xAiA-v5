@@ -3,6 +3,7 @@
 
 #define DOBJECTS_DECLARATIONS_ONLY
 
+#include <memory>
 #include <string>
 #include <map>
 
@@ -34,7 +35,7 @@ public:
 
 			if ( role_it == roles.end() ) {
 				roles[ role_id ] = std::make_shared<disc_role_t>( role_data, this );
-			} else role_it->second->m_update( role_data );
+			} else role_it->second->m_update( role_data, this );
 		}
 
 		// TODO: Update channels

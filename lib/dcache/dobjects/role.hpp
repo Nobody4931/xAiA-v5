@@ -20,10 +20,10 @@ public:
 
 	disc_role_t( nlohmann::json& role_data, disc_guild_t* parent_guild )
 		: id( str_to_integer<dsnowflake_t>( role_data["id"].get_ref<std::string&>() ) )
-	{ m_update( role_data ); }
+	{ m_update( role_data, parent_guild ); }
 
 public:
-	void m_update( nlohmann::json& role_data ) {
+	inline void m_update( nlohmann::json& role_data, disc_guild_t* parent_guild ) {
 		name = role_data["name"].get<std::string>();
 		color = role_data["color"].get<uint32_t>();
 		position = role_data["position"].get<uint32_t>();
