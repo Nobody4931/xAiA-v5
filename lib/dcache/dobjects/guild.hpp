@@ -11,6 +11,7 @@
 #include "util/str2num.hpp"
 #include "dcache/dtypes.hpp"
 #include "dcache/dobjects.hpp"
+#include "dcache/dobjects/role.hpp"
 
 
 class disc_guild_t {
@@ -26,6 +27,21 @@ public:
 	// was going to toss this into a source file but it was
 	// originally supposed to be the constructor so nah
 	inline void m_update( nlohmann::json& guild_data ) {
+		// Update roles
+		for ( nlohmann::json& role_data : guild_data["roles"] ) {
+			auto role_id = str_to_integer<dsnowflake_t>( role_data["id"].get_ref<std::string&>() );
+			auto role_it = roles.find( role_id );
+
+			if ( role_it == roles.end() ) {
+				roles[ role_id ] = std::make_shared<disc_role_t>( role_data, this );
+			} else role_it->second->m_update( role_data );
+		}
+
+		// TODO: Update channels
+		// TODO: Update threads
+		// TODO: Update members
+		// TODO: Update emojis
+
 		// Update primitive fields
 		name = guild_data["name"].get<std::string>();
 
