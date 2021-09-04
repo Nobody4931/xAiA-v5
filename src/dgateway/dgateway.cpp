@@ -227,7 +227,7 @@ void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::messa
 	switch ( data["op"].get<disc_gate_op_type>() ) {
 
 		case OP_DISPATCH: {
-			std::string event = data["t"].get<std::string>();
+			std::string& event = data["t"].get_ref<std::string&>();
 
 			if ( event == "MESSAGE_CREATE" || event == "MESSAGE_UPDATE" ) {
 				// TODO: Nitro sniper
@@ -236,7 +236,7 @@ void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::messa
 			}
 
 			else if ( event == "READY" ) {
-				m_session_id = data["d"]["session_id"].get<std::string>();
+				m_session_id = data["d"]["session_id"].get<std::string>(); // hoping this uses rvo lol
 
 				spdlog::debug( "Successfully started session: {}", m_session_id );
 
