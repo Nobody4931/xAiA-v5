@@ -13,6 +13,7 @@
 #include "dcache/dtypes.hpp"
 #include "dcache/dobjects.hpp"
 #include "dcache/dobjects/role.hpp"
+#include "dcache/dobjects/member.hpp"
 
 
 class disc_guild_t {
@@ -40,7 +41,20 @@ public:
 
 		// TODO: Update channels
 		// TODO: Update threads
-		// TODO: Update members
+
+		// Update members
+		auto members_it = guild_data.find( "members" );
+		if ( members_it != guild_data.end() ) {
+			for ( nlohmann::json& member_data : members_it.value() ) {
+				auto member_id = str_to_integer<dsnowflake_t>( member_data["id"].get_ref<std::string&>() );
+				auto member_it = members.find( member_id );
+
+				if ( member_it == members.end() ) {
+					members[ member_id ] = std::make_shared<disc_member_t>( member_data, this );
+				} else member_it->second->m_update( member_data, this );
+			}
+		}
+
 		// TODO: Update emojis
 
 		// Update primitive fields
