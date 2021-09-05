@@ -65,7 +65,7 @@ uint32_t get_client_build_number( asio::io_context& io_ctx, std::string& headers
 	http::parser::response dasset = dapi_request( io_ctx, brequest );
 	const std::string& dasset_str = dasset.get_body();
 
-	return str_to_integer<uint32_t>( dasset_str.substr( dasset_str.find( "buildNumber" ) + 14, 5 ) );
+	return str_to_int<uint32_t>( dasset_str.substr( dasset_str.find( "buildNumber" ) + 14, 5 ) );
 }
 
 

@@ -21,7 +21,7 @@ public:
 		: id( 0 ) {}
 
 	disc_guild_t( dcache_t* dcache, nlohmann::json& guild_data )
-		: id( str_to_integer<dsnowflake_t>( guild_data["id"].get_ref<std::string&>() ) )
+		: id( str_to_int<dsnowflake_t>( guild_data["id"].get_ref<std::string&>() ) )
 	{ m_update( dcache, guild_data ); }
 
 public:

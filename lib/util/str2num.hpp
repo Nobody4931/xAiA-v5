@@ -6,7 +6,7 @@
 
 
 template< typename T >
-inline T str_to_integer( const std::string& string ) {
+inline T str_to_int( const std::string& string ) {
 	T integer = 0;
 
 	auto iter = string.begin();
@@ -25,7 +25,7 @@ inline T str_to_integer( const std::string& string ) {
 }
 
 template< typename T >
-inline T str_to_number( const std::string& string ) {
+inline T str_to_num( const std::string& string ) {
 	int64_t number = 0;
 	int64_t decimal = 0;
 	int64_t places = 1;
