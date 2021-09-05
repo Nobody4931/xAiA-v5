@@ -16,6 +16,7 @@
 #include <fmt/core.h>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
+#include <websocketpp/error.hpp>
 #include <websocketpp/connection.hpp>
 #include <websocketpp/http/parser.hpp>
 #include <websocketpp/http/request.hpp>
@@ -158,7 +159,7 @@ void dclient_t::heartbeat( websocketpp::connection_hdl con_hdl ) {
 		} else {
 			m_client.send( con_hdl, fmt::format( "{{\"op\":1,\"d\":{}}}", m_last_sequence ), websocketpp::frame::opcode::TEXT );
 		}
-	} catch ( const std::exception& error ) {}
+	} catch ( const websocketpp::exception& error ) {}
 }
 
 void dclient_t::heartbeat_loop( websocketpp::connection_hdl con_hdl ) {
