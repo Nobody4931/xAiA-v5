@@ -1,6 +1,3 @@
-// TODO: Fix websocketpp (again)
-// - Stupid thing can't parse long response bodies
-
 #define ASIO_STANDALONE
 
 #include "dgateway/dgateway.hpp"
