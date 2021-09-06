@@ -1,3 +1,6 @@
+// TODO: Fix websocketpp (again)
+// - Stupid thing can't parse long response bodies
+
 #define ASIO_STANDALONE
 
 #include "dgateway/dgateway.hpp"
@@ -16,6 +19,8 @@
 #include <fmt/core.h>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
+#include <asio/io_context.hpp>
+#include <asio/streambuf.hpp>
 #include <websocketpp/error.hpp>
 #include <websocketpp/connection.hpp>
 #include <websocketpp/http/parser.hpp>
@@ -243,6 +248,8 @@ void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::messa
 				m_session_id = data["d"]["session_id"].get<std::string>();
 
 				spdlog::debug( "Successfully started session: {}", m_session_id );
+
+				// TODO: Cache everything
 			}
 
 			else if ( event == "READY_SUPPLEMENTAL" ) {
@@ -252,6 +259,7 @@ void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::messa
 				if ( !m_readied_before ) {
 					m_readied_before = true;
 
+					// TODO: Take userdata from cached client user, this field does not exist
 					nlohmann::json& userdata = data["d"]["user"];
 					spdlog::info( "Successfully authenticated as: {}#{} | ID: {}",
 						userdata["username"], userdata["discriminator"], userdata["id"] );
