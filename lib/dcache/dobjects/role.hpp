@@ -22,6 +22,7 @@ public:
 
 	disc_role_t( dcache_t* dcache, nlohmann::json& role_data, disc_guild_t* parent_guild )
 		: id( str_to_int<dsnowflake_t>( role_data["id"].get_ref<std::string&>() ) )
+		, managed( role_data["managed"].get<bool>() )
 	{ m_update( dcache, role_data, parent_guild ); }
 
 public:
