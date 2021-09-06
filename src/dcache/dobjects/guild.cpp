@@ -12,6 +12,12 @@
 
 
 void disc_guild_t::m_update( dcache_t* dcache, nlohmann::json& guild_data ) {
+	auto unavailable_it = guild_data.find( "unavailable" );
+	if ( unavailable_it != guild_data.end() && unavailable_it->get<bool>() == true ) {
+		unavailable = true;
+		return;
+	}
+
 	// Update roles
 	for ( nlohmann::json& role_data : guild_data["roles"] ) {
 		auto role_id = str_to_int<dsnowflake_t>( role_data["id"].get_ref<std::string&>() );
@@ -29,9 +35,7 @@ void disc_guild_t::m_update( dcache_t* dcache, nlohmann::json& guild_data ) {
 
 	// Update primitive fields
 	name = guild_data["name"].get<std::string>();
-
-	auto unavailable_it = guild_data.find( "unavailable" );
-	unavailable = unavailable_it != guild_data.end() ? unavailable_it->get<bool>() : false;
+	unavailable = false;
 
 	auto owner_it = members.find(
 		str_to_int<dsnowflake_t>( guild_data["owner_id"].get_ref<std::string&>() ) );
