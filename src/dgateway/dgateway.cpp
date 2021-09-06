@@ -240,9 +240,14 @@ void dclient_t::on_message( websocketpp::connection_hdl con_hdl, client_t::messa
 			}
 
 			else if ( event == "READY" ) {
-				m_session_id = data["d"]["session_id"].get<std::string>(); // hoping this uses rvo lol
+				m_session_id = data["d"]["session_id"].get<std::string>();
 
 				spdlog::debug( "Successfully started session: {}", m_session_id );
+			}
+
+			else if ( event == "READY_SUPPLEMENTAL" ) {
+				// TODO: Subscribe to guild events for all guilds (not only large guilds bc idk how to check for that lol)
+				// SEE: https://github.com/Merubokkusu/Discord-S.C.U.M/blob/master/examples/messagesFromLargeGuilds.py
 
 				if ( !m_readied_before ) {
 					m_readied_before = true;
