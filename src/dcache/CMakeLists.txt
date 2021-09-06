@@ -1,6 +1,6 @@
 add_library(dcache STATIC
 	"dobjects/guild.cpp"
-	# "dobjects/role.cpp"
+	"dobjects/role.cpp"
 	# "dobjects/channel_base.cpp"
 	# "dobjects/channel_category.cpp"
 	# "dobjects/channel_text.cpp"
