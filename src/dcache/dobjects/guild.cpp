@@ -9,6 +9,7 @@
 #include "dcache/dtypes.hpp"
 #include "dcache/dcache.hpp"
 #include "dcache/dobjects/role.hpp"
+#include "dcache/dobjects/emoji.hpp"
 
 
 void disc_guild_t::m_update( dcache_t* dcache, nlohmann::json& guild_data ) {
@@ -31,7 +32,16 @@ void disc_guild_t::m_update( dcache_t* dcache, nlohmann::json& guild_data ) {
 	// TODO: Update channels
 	// TODO: Update threads
 	// TODO: Update members
-	// TODO: Update emojis
+
+	// Update emojis
+	for ( nlohmann::json& emoji_data : guild_data["emojis"] ) {
+		auto emoji_id = str_to_int<dsnowflake_t>( guild_data["id"].get_ref<std::string&>() );
+		auto emoji_it = emojis.find( emoji_id );
+
+		if ( emoji_it == emojis.end() ) {
+			emojis[ emoji_id ] = std::make_shared<disc_emoji_t>( dcache, emoji_data, this );
+		} else emoji_it->second->m_update( dcache, emoji_data, this );
+	}
 
 	// Update primitive fields
 	name = guild_data["name"].get<std::string>();

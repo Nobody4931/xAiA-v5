@@ -9,7 +9,7 @@ add_library(dcache STATIC
 	# "dobjects/channel_groupdm.cpp"
 	# "dobjects/channel_thread.cpp"
 	# "dobjects/member.cpp"
-	# "dobjects/emoji.cpp"
+	"dobjects/emoji.cpp"
 	# "dobjects/user.cpp"
 )
 
