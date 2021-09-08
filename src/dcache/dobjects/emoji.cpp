@@ -1,10 +1,9 @@
-#include "dcache/dobjects/emoji.hpp"
-
 #include <string>
 
 #include <nlohmann/json.hpp>
 
 #include "dcache/dcache.hpp"
+#include "dcache/dobjects/emoji.hpp"
 #include "dcache/dobjects/guild.hpp"
 
 

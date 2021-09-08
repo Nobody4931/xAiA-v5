@@ -1,5 +1,3 @@
-#include "dcache/dobjects/member.hpp"
-
 #include <string>
 
 #include <nlohmann/json.hpp>
@@ -7,6 +5,7 @@
 #include "util/str2num.hpp"
 #include "dcache/dtypes.hpp"
 #include "dcache/dcache.hpp"
+#include "dcache/dobjects/member.hpp"
 #include "dcache/dobjects/guild.hpp"
 
 

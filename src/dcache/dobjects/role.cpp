@@ -1,5 +1,3 @@
-#include "dcache/dobjects/role.hpp"
-
 #include <cstdint>
 #include <string>
 
@@ -8,6 +6,7 @@
 #include "util/str2num.hpp"
 #include "dcache/dtypes.hpp"
 #include "dcache/dcache.hpp"
+#include "dcache/dobjects/role.hpp"
 #include "dcache/dobjects/guild.hpp"
 
 
