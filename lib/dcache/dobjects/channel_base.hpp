@@ -34,7 +34,7 @@ public:
 	dsnowflake_t id;
 	std::string name;
 
-	uint32_t position;
+	int32_t position;
 	disc_channel_type type;
 	disc_guild_ptr_t guild;
 	std::vector<disc_channel_overwrites_ptr_t> overwrites;
