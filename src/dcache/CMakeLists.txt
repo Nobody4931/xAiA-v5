@@ -10,7 +10,7 @@ add_library(dcache STATIC
 	# "dobjects/channel_thread.cpp"
 	"dobjects/member.cpp"
 	"dobjects/emoji.cpp"
-	# "dobjects/user.cpp"
+	"dobjects/user.cpp"
 )
 
 target_include_directories(dcache PRIVATE
