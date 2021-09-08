@@ -23,6 +23,8 @@ public:
 
 	disc_channel_base_t( dcache_t* dcache, nlohmann::json& channel_data, disc_guild_t* parent_guild )
 		: id( str_to_int<dsnowflake_t>( channel_data["id"].get_ref<std::string&>() ) )
+		, type( channel_data["type"].get<disc_channel_type>() )
+		, guild( parent_guild )
 	{ m_update( dcache, channel_data, parent_guild ); }
 
 public:
