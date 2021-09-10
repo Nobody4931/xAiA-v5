@@ -18,7 +18,7 @@ public:
 
 	disc_channel_category_t( dcache_t* dcache, nlohmann::json& channel_data, disc_guild_t* parent_guild )
 		: disc_channel_base_t( dcache, channel_data, parent_guild )
-	{ m_update( dcache, channel_data, parent_guild ); }
+	{}
 
 public:
 	// nothing to update lol
