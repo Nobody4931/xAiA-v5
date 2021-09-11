@@ -33,6 +33,7 @@ public:
 
 	disc_member_ptr_t owner;
 
+	// TODO: Item removal by gateway dispatch
 	std::map<dsnowflake_t, disc_role_ptr_t> roles;
 	std::map<dsnowflake_t, disc_channel_base_ptr_t> channels;
 	std::map<dsnowflake_t, disc_channel_base_ptr_t> threads;

@@ -29,7 +29,7 @@ public:
 	disc_user_ptr_t user;
 	std::string nick;
 
-	std::map<dsnowflake_t, disc_role_ptr_t> roles;
+	std::map<dsnowflake_t, disc_role_ptr_t> roles; // TODO: Role removal by gateway dispatch
 
 	bool mute;
 	bool deaf;
